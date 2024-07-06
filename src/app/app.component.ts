@@ -8,13 +8,16 @@ import { ProductsService } from './services/products.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  loading = false;
   title = 'Learning angular for review';
   products: IProduct[] = [];
 
   constructor(private productsService: ProductsService) {}
   ngOnInit(): void {
-    this.productsService.getAll().subscribe((products) => {
-      this.products= products;
-    });
+    this.loading=true;
+    // this.productsService.getAll().subscribe((products) => {
+    //   this.products= products;
+    //   this.loading=false;
+    // });
   }
 }
