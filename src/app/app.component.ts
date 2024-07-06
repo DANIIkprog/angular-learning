@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   loading = false;
   title = 'Learning angular for review';
   products$:Observable<IProduct[]>
-
+  term =''
   constructor(private productsService: ProductsService) {}
   ngOnInit(): void {
     this.loading=true;
