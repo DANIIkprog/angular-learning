@@ -6,13 +6,18 @@
     placeholder="Filter product..."
     [(ngModel)]="term"
   />
+
   <h1 class="font-bold mb-2 text-center text-lg">{{ title | titlecase }}</h1>
 
   <p *ngIf="loading" class="text-center text-lg">Loading...</p>
+
   <div *ngIf="products$ | async as products ">
     <app-product
       *ngFor="let product of products | filterProducts:term; let i =index;"
       [product]="product"
     ></app-product>
   </div>
+  <app-modal>
+    <app-create-product></app-create-product>
+  </app-modal>
 </div>
